@@ -8,10 +8,11 @@ public class Main {
         while (!clients.isEmpty()) {
             Person s = clients.poll();
             int tickets = s.getNumOfTickets();
-            s.setNumOfTickets(--tickets);
-            System.out.println(s + " прокатился(-лась) на аттракционе. Осталось "
-                    + s.getNumOfTickets() + " билет(ов)");
             if (tickets > 0) {
+
+                System.out.println(s + " прокатился(-лась) на аттракционе. Осталось "
+                        + s.getNumOfTickets() + " билет(ов)");
+                s.setNumOfTickets(--tickets);
                 clients.offer(s);
             }
             if (tickets == 0) {
