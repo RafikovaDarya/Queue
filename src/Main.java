@@ -9,13 +9,12 @@ public class Main {
             Person s = clients.poll();
             int tickets = s.getNumOfTickets();
             if (tickets > 0) {
-
-                System.out.println(s + " прокатился(-лась) на аттракционе. Осталось "
-                        + s.getNumOfTickets() + " билет(ов)");
                 s.setNumOfTickets(--tickets);
+                System.out.println(s + " прокатился(-лась) на аттракционе. Осталось "
+                        + tickets + " билет(ов)");
+
                 clients.offer(s);
-            }
-            if (tickets == 0) {
+            } else if (tickets == 0) {
                 System.out.println(s + " сошел(-шла) с аттракциона.");
             }
 
