@@ -13,9 +13,11 @@ public class Main {
                 System.out.println(s + " прокатился(-лась) на аттракционе. Осталось "
                         + tickets + " билет(ов)");
 
-                clients.offer(s);
-            } else if (tickets == 0) {
-                System.out.println(s + " сошел(-шла) с аттракциона.");
+                if (tickets == 0) {
+                    System.out.println(s + " сошел(-шла) с аттракциона.");
+                } else if (tickets > 0) {
+                    clients.offer(s);
+                }
             }
 
         }
